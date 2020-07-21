@@ -34,9 +34,11 @@
                 <div class="noPadding col-md-3">
                   <div class="form-group">
                     <!--suppress HtmlFormInputWithoutLabel -->
-                    <select name="" class="form-control" id="">
-                      <option value="hello">hello</option>
-                      <option value="hello">hello</option>
+                    <select name="" class="form-control">
+                      <option value="all">All Categories</option>
+                      <option value="Shop">Shop</option>
+                      <option value="Shop">Hostels</option>
+                      <option value="Shop">Restaurants</option>
                     </select>
                   </div>
                 </div>
@@ -128,6 +130,9 @@ h3 {
   /* For desktop: */
   .myContent {
     padding: 130px 0 0 0;
+  }
+  .card {
+    position: inherit !important;
   }
 }
 @media only screen and (max-width: 768px) {
