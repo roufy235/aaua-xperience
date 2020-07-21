@@ -1,21 +1,27 @@
 <template>
   <div>
-    <h2>
-      Hello World
-    </h2>
-    <h2>
-      Hello World
-    </h2>
+    <Banner />
   </div>
 </template>
 
 <script>
-export default {}
+import Banner from '~/components/indexComponents/Banner'
+export default {
+  components: { Banner },
+  head() {
+    return {
+      title: process.env.npm_package_name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <!--suppress SassScssResolvedByNameOnly -->
-<style scoped lang="scss">
-h2 {
-  color: $green;
-}
-</style>
+<style scoped lang="scss"></style>

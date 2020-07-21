@@ -1,10 +1,65 @@
 <template>
   <div>
+    <header class="header" :class="{ open: openNav }">
+      <div
+        class="overlay"
+        :class="{ 'fade-out': !openNav, 'fade-in': openNav }"
+      ></div>
+      <nav class="myFlex myFlex-jc-sb myFlex-ai-c">
+        <nuxt-link to="#">
+          <img class="logo" src="/logo.png" alt="logo" />
+        </nuxt-link>
+        <a
+          id="btnHamburger"
+          class="header__menu hide-for-desktop"
+          href="#"
+          @click="openNav = !openNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="header__menu header__links hide-for-mobile">
+          <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a
+          ><a href="#">Blog</a><a href="#">Careers</a>
+        </div>
+
+        <mdbBtn class="btn-sm hide-for-mobile" color="danger">
+          Sign In
+        </mdbBtn>
+      </nav>
+    </header>
     <Nuxt />
   </div>
 </template>
 
-<style>
+<script>
+import { mdbBtn } from 'mdbvue'
+export default {
+  components: { mdbBtn },
+  data: () => ({
+    openNav: false,
+  }),
+  head() {
+    return {
+      title: process.env.npm_package_name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+.logo {
+  width: $logoSize !important;
+}
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -15,41 +70,5 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
 }
 </style>

@@ -24,12 +24,23 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap',
+      },
+    ],
   },
   /*
    ** Global CSS
    */
-  css: ['~/assets/scss/color.scss'],
+  css: [
+    '~/assets/scss/style.scss',
+    'bootstrap-css-only/css/bootstrap.min.css',
+    'mdbvue/lib/css/mdb.min.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -69,5 +80,8 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    extend(config, ctx) {},
+    transpile: ['mdbvue/lib/components'],
+  },
 }
