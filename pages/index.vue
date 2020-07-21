@@ -8,110 +8,11 @@
         </mdbBtn>
       </div>
       <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
+        <SectionComponent section-name="Famous Shops" />
+        <SectionComponent section-name="Popular Hotels" />
+        <SectionComponent section-name="Top Restaurants" />
       </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
-      <div class="container">
-        <h2 class="addBar">
-          Famous Shops
-        </h2>
-      </div>
+      <HowItWorks />
     </div>
   </div>
 </template>
@@ -120,8 +21,10 @@
 <script>
 import { mdbBtn } from 'mdbvue'
 import Banner from '~/components/indexComponents/Banner'
+import SectionComponent from '~/components/indexComponents/SectionComponent'
+import HowItWorks from '~/components/indexComponents/HowItWorks'
 export default {
-  components: { Banner, mdbBtn },
+  components: { HowItWorks, SectionComponent, Banner, mdbBtn },
   methods: {
     becomeASponsor() {
       this.$router.push('/sponsor')
@@ -144,10 +47,6 @@ export default {
 
 <!--suppress SassScssResolvedByNameOnly -->
 <style scoped lang="scss">
-h2 {
-  color: #333;
-  font-weight: 500 !important;
-}
 .indexPage {
   margin-top: 40px;
 }

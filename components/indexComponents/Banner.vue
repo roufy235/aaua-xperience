@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="noPadding col-md-2">
-                  <mdbBtn color="danger" class="btn-block searchBtn">
+                  <mdbBtn color="danger" class="btn-block searchBtn boldMe">
                     Search
                   </mdbBtn>
                 </div>
@@ -57,31 +57,37 @@
       <mdbCard class="categories">
         <mdbCardBody class="text-center">
           <b-row>
-            <b-col>
-              <div>
+            <b-col sm="6" md="6" lg="3">
+              <nuxt-link to="#">
                 <b-icon icon="search" variant="danger"></b-icon>
                 <h3>
                   Shops
                 </h3>
-              </div>
+              </nuxt-link>
             </b-col>
-            <b-col>
-              <BIconHouse class="setIconColor" />
-              <h3>
-                Hotels
-              </h3>
+            <b-col class="categoryBars" sm="6" md="6" lg="3">
+              <nuxt-link to="#">
+                <BIconHouse class="setIconColor" />
+                <h3>
+                  Hotels
+                </h3>
+              </nuxt-link>
             </b-col>
-            <b-col>
-              <BIconServer class="setIconColor" />
-              <h3>
-                Restaurants
-              </h3>
+            <b-col class="categoryBars" sm="6" md="6" lg="3">
+              <nuxt-link to="#">
+                <BIconServer class="setIconColor" />
+                <h3>
+                  Restaurants
+                </h3>
+              </nuxt-link>
             </b-col>
-            <b-col>
-              <BIconThreeDots class="setIconColor" />
-              <h3>
-                More
-              </h3>
+            <b-col class="categoryBars" sm="6" md="6" lg="3">
+              <nuxt-link to="#">
+                <BIconThreeDots class="setIconColor" />
+                <h3>
+                  More
+                </h3>
+              </nuxt-link>
             </b-col>
           </b-row>
         </mdbCardBody>
@@ -143,6 +149,14 @@ h3 {
   .searchHolder {
     margin: 10px;
   }
+  h2 {
+    margin-bottom: 50px;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem !important;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+  }
   .card {
     position: inherit !important;
   }
@@ -190,7 +204,7 @@ h3 {
 }
 .searchHolder {
   background-color: white;
-  box-shadow: 2px 2px 2px 2px black;
+  box-shadow: 2px 2px 2px 24px #5a17175c;
 }
 .padding {
   padding: 25px;
