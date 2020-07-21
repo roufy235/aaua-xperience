@@ -1,6 +1,12 @@
 $logoSize: 100px;
 $bannerHeight: 500px;
-$bannerOverlay: #000000ad;
-// font size
+$bannerOverlay: rgba(0,0,0,0.6);
+$dangerColor : #ff3547;
+  // font size
 $body-med: 1.125rem; // 18px
 $body-sm: 0.875rem; // 14px
+
+
+.setIconColor {
+  color: $dangerColor;
+}
