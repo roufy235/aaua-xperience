@@ -1,6 +1,11 @@
 <template>
   <div>
     <Banner />
+    <div class="container">
+      <h2>
+        Famous Shops
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -24,4 +29,12 @@ export default {
 </script>
 
 <!--suppress SassScssResolvedByNameOnly -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+h2 {
+  color: #333;
+  font-weight: 500 !important;
+}
+.container {
+  margin-top: 80px;
+}
+</style>

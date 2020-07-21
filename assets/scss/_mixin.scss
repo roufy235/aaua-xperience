@@ -26,7 +26,6 @@ $breakpoint-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.437
   @include breakpoint-down(medium) {
     display: none;
   }
-
 }
 
 .hide-for-desktop {
