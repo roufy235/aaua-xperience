@@ -18,7 +18,7 @@
   .overlay {
     opacity: 0;
     position: fixed;
-    top: 3.75rem;
+    top: 3.25rem;
     right: 0;
     bottom: 0;
     left: 0;
@@ -35,7 +35,7 @@
   }
 
   nav {
-    padding: 1.065rem 1.5rem;
+    padding: 0.6rem 1.5rem;
   }
 
   &__menu { // mobile menu
@@ -59,9 +59,10 @@
       font-size: 0.875rem;
       color: hsl(233, 8%, 62%);
       transition: color 300ms ease-in-out;
+      font-weight: 500 !important;
 
       &:not(:last-child) {
-        margin-right: 32px;
+        margin-right: 60px;
       }
 
       &::before {
@@ -95,4 +96,13 @@
       opacity: 0.75;
     }
   }
+}
+
+.stickNavBar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: white;
 }

@@ -1,18 +1,132 @@
 <template>
   <div>
     <Banner />
-    <div class="container">
-      <h2>
-        Famous Shops
-      </h2>
+    <div class="indexPage">
+      <div class="text-center">
+        <mdbBtn class="boldMe" color="danger" @click="becomeASponsor">
+          Become a Sponsor
+        </mdbBtn>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
+      <div class="container">
+        <h2 class="addBar">
+          Famous Shops
+        </h2>
+      </div>
     </div>
   </div>
 </template>
 
+<!--suppress ES6CheckImport -->
 <script>
+import { mdbBtn } from 'mdbvue'
 import Banner from '~/components/indexComponents/Banner'
 export default {
-  components: { Banner },
+  components: { Banner, mdbBtn },
+  methods: {
+    becomeASponsor() {
+      this.$router.push('/sponsor')
+    },
+  },
   head() {
     return {
       title: process.env.npm_package_name,
@@ -34,7 +148,7 @@ h2 {
   color: #333;
   font-weight: 500 !important;
 }
-.container {
-  margin-top: 80px;
+.indexPage {
+  margin-top: 40px;
 }
 </style>
