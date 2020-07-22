@@ -26,12 +26,18 @@ body {
     margin-left: 10px;
     margin-right: 10px;
   }
+  .pageHolder {
+    margin-top: 55px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   .categoryBars {
     border-left: 1px solid silver;
+  }
+  .pageHolder {
+    margin-top: 66px;
   }
 }
 

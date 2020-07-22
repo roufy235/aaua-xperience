@@ -24,26 +24,88 @@
           ><a href="#">FAQs</a>
         </div>
 
-        <div class="hide-for-mobile">
+        <div v-if="GET_IS_USER_LOGGED_IN" class="hide-for-mobile">
+          <nuxt-link to="/user" class="btn-sm btn btn-dark ripple-parent">
+            Name
+          </nuxt-link>
+          <mdbBtn color="danger" class="btn-sm" @click="logout">
+            Sign out
+          </mdbBtn>
+        </div>
+        <div v-else class="hide-for-mobile">
           <nuxt-link to="/register" class="btn-sm btn btn-dark ripple-parent">
             Sign Up
           </nuxt-link>
-          <nuxt-link to="/login" class="btn-sm btn btn-danger ripple-parent">
+          <mdbBtn color="danger" class="btn-sm" @click="modal = !modal">
             Sign In
-          </nuxt-link>
+          </mdbBtn>
         </div>
       </nav>
     </header>
+    <div>
+      <!-- Side Modal Top Right -->
+      <mdb-btn color="primary" @click.native="modal = true"
+        >Full height right</mdb-btn
+      >
+      <mdb-modal
+        side
+        position="top-right"
+        direction="right"
+        :show="modal"
+        @close="modal = false"
+      >
+        <mdb-modal-header>
+          <mdb-modal-title>Sign In</mdb-modal-title>
+        </mdb-modal-header>
+        <mdb-modal-body>...</mdb-modal-body>
+      </mdb-modal>
+    </div>
   </div>
 </template>
 
-<!--suppress ES6CheckImport -->
+<!--suppress ES6CheckImport, NpmUsedModulesInstalled -->
 <script>
+import {
+  mdbBtn,
+  mdbModal,
+  mdbModalHeader,
+  mdbModalTitle,
+  mdbModalBody,
+} from 'mdbvue'
+import { mapGetters } from 'vuex'
+import Cookies from 'js-cookie'
+// noinspection JSAnnotator
 export default {
   name: 'HeaderComponent',
+  components: {
+    mdbModal,
+    mdbModalHeader,
+    mdbModalTitle,
+    mdbModalBody,
+    mdbBtn,
+  },
   data: () => ({
     openNav: false,
+    modal: false,
   }),
+  computed: {
+    ...mapGetters(['GET_IS_USER_LOGGED_IN']),
+  },
+  methods: {
+    logout() {
+      this.$fireAuth
+        .signOut()
+        .then((response) => {
+          this.$store.commit('SET_LOGIN_VAL', false)
+          this.$router.push('/')
+          this.$toast.success('You are now signed out')
+          Cookies.remove('access_token')
+        })
+        .catch((error) => {
+          alert(error)
+        })
+    },
+  },
 }
 </script>
 

@@ -72,7 +72,45 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/toast',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyDLq-silESo4GMFy0DJzbsOj_XXVjynb8E',
+          authDomain: 'aaua-xperience.firebaseapp.com',
+          databaseURL: 'https://aaua-xperience.firebaseio.com',
+          projectId: 'aaua-xperience',
+          storageBucket: 'aaua-xperience.appspot.com',
+          messagingSenderId: '967876807982',
+          appId: '1:967876807982:web:36d28facc8f7029401bebf',
+          measurementId: 'G-SRM55PZFQY',
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+          performance: true,
+          analytics: true,
+          storage: true,
+          realtimeDb: true,
+        },
+      },
+    ],
   ],
+  toast: {
+    theme: 'bubble',
+    position: 'top-right',
+    duration: 4000,
+    register: [
+      // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error',
+        },
+      },
+    ],
+  },
   styleResources: {
     scss: ['./assets/scss/*.scss'],
   },
