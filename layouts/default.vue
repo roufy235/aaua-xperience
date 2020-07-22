@@ -1,11 +1,22 @@
 <template>
   <div>
     <header-component />
-    <Nuxt />
+    <div id="pattern">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+#pattern {
+  background: #f8f8f8 url('/images/pattern_3.svg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
