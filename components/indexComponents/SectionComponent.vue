@@ -19,6 +19,7 @@
   </div>
 </template>
 
+<!--suppress ES6CheckImport -->
 <script>
 import { mdbCard, mdbCardImage, mdbCardBody, mdbBtn } from 'mdbvue'
 export default {
@@ -40,6 +41,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .col-md-3 {
+    margin-bottom: 20px !important;
+  }
+}
+
 .section {
   margin-top: 30px;
   margin-bottom: 70px;
@@ -54,6 +62,6 @@ h2 {
 .cardBody {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 0rem !important;
+  padding: 0 !important;
 }
 </style>
