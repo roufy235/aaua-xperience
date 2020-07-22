@@ -12,6 +12,7 @@ export default {
 }
 </script>
 
+<!--suppress SassScssResolvedByNameOnly -->
 <style scoped lang="scss">
 .gifImage {
   background-image: url('/gif/how_it_works.gif');

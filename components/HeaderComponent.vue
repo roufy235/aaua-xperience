@@ -25,12 +25,12 @@
         </div>
 
         <div class="hide-for-mobile">
-          <mdbBtn class="btn-sm" color="dark">
+          <nuxt-link to="/register" class="btn-sm btn btn-dark ripple-parent">
             Sign Up
-          </mdbBtn>
-          <mdbBtn class="btn-sm" color="danger">
+          </nuxt-link>
+          <nuxt-link to="/login" class="btn-sm btn btn-danger ripple-parent">
             Sign In
-          </mdbBtn>
+          </nuxt-link>
         </div>
       </nav>
     </header>
@@ -39,10 +39,8 @@
 
 <!--suppress ES6CheckImport -->
 <script>
-import { mdbBtn } from 'mdbvue'
 export default {
   name: 'HeaderComponent',
-  components: { mdbBtn },
   data: () => ({
     openNav: false,
   }),

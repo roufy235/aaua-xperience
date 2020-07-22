@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: 'Sponsor',
+  name: 'Register',
   head() {
     return {
-      title: 'Become a Sponsor',
+      title: 'Sign Up',
       meta: [
         {
           hid: 'description',
