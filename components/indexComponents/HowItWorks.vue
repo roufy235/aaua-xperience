@@ -42,8 +42,7 @@
           </div>
           <!-- /row -->
           <b-row>
-            <b-col></b-col>
-            <b-col>
+            <b-col offset-md="3" offset-lg="3" sm="12" md="4" lg="4">
               <nuxt-link
                 to="/register"
                 class="btn-block btn btn-danger reg ripple-parent"
@@ -52,7 +51,6 @@
                 Sign Up
               </nuxt-link>
             </b-col>
-            <b-col></b-col>
           </b-row>
         </div>
       </div>
@@ -75,6 +73,9 @@ export default {
   background-position: bottom;
   background-repeat: no-repeat;
 }
+.col-md-4 {
+  margin-bottom: 20px;
+}
 .works {
   margin-bottom: 30px;
 }
@@ -95,6 +96,6 @@ h3 {
   background-color: #000000e8;
   position: relative;
   z-index: 22;
-  padding: 60px 0 60px 0;
+  padding: 70px 0 60px 0;
 }
 </style>
