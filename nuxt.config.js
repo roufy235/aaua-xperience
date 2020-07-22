@@ -126,5 +126,8 @@ export default {
   build: {
     extend(config, ctx) {},
     transpile: ['mdbvue/lib/components'],
+    filenames: {
+      chunk: ({ isDev }) => (isDev ? '[name].js' : '[chunkhash].js'),
+    },
   },
 }
