@@ -43,10 +43,6 @@
       </nav>
     </header>
     <div>
-      <!-- Side Modal Top Right -->
-      <mdb-btn color="primary" @click.native="modal = true"
-        >Full height right</mdb-btn
-      >
       <mdb-modal
         side
         position="top-right"
