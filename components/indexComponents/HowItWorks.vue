@@ -76,6 +76,9 @@ export default {
 .col-md-4 {
   margin-bottom: 20px;
 }
+.reg {
+  font-weight: bold;
+}
 .works {
   margin-bottom: 30px;
 }
