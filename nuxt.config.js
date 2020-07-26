@@ -120,7 +120,7 @@ export default {
    */
   axios: {},
   server: {
-    port: process.env.PORT || 30000,
+    // port: process.env.PORT || 30000,
   },
   /*
    ** Build configuration
