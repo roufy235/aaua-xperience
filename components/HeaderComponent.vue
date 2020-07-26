@@ -53,7 +53,47 @@
         <mdb-modal-header>
           <mdb-modal-title>Sign In</mdb-modal-title>
         </mdb-modal-header>
-        <mdb-modal-body>...</mdb-modal-body>
+        <mdb-modal-body>
+          <form>
+            <label for="defaultFormLoginEmailEx" class="grey-text"
+              >Your email</label
+            >
+            <input
+              id="defaultFormLoginEmailEx"
+              v-model="loginData.email"
+              type="email"
+              required
+              class="form-control"
+            />
+            <br />
+            <label for="defaultFormLoginPasswordEx" class="grey-text"
+              >Your password</label
+            >
+            <input
+              id="defaultFormLoginPasswordEx"
+              v-model="loginData.password"
+              type="password"
+              required
+              class="form-control"
+            />
+            <div class="text-center mt-4">
+              <mdbBtn
+                color="danger"
+                :disabled="loginData.loginBool"
+                class="btn btn-block btn-sm"
+                @click="login"
+              >
+                <span
+                  v-if="loginData.loginBool"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Login
+              </mdbBtn>
+            </div>
+          </form>
+        </mdb-modal-body>
       </mdb-modal>
     </div>
   </div>
@@ -83,15 +123,49 @@ export default {
   data: () => ({
     openNav: false,
     modal: false,
+    loginData: {
+      loginBool: false,
+      email: 'roufy235@gmail.com',
+      password: 'roufy2354kfkfkfkfk',
+    },
   }),
   computed: {
     ...mapGetters(['GET_IS_USER_LOGGED_IN']),
   },
   methods: {
+    login() {
+      if (this.loginData.email && this.loginData.password) {
+        this.loginData.loginBool = true
+        this.$fireAuth
+          .signInWithEmailAndPassword(
+            this.loginData.email,
+            this.loginData.password
+          )
+          .then((response) => {
+            this.loginData.loginBool = false
+            response.user.getIdToken(true).then((token) => {
+              Cookies.set('access_token', token)
+            })
+            // noinspection JSUnresolvedVariable
+            this.$store.commit('SET_LOGIN_VAL', true)
+            // this.$router.push('/user')
+            Cookies.remove('access_token')
+            this.modal = false
+          })
+          .catch((error) => {
+            this.$toast.error(error.toString())
+            this.loginData.loginBool = false
+          })
+      } else {
+        this.$toast.info('Email/password is empty')
+      }
+    },
     logout() {
+      // noinspection JSUnusedLocalSymbols
       this.$fireAuth
         .signOut()
         .then((response) => {
+          // noinspection JSUnresolvedVariable
           this.$store.commit('SET_LOGIN_VAL', false)
           this.$router.push('/')
           this.$toast.success('You are now signed out')

@@ -5,6 +5,7 @@
 <script>
 export default {
   name: 'Register',
+  middleware: 'UserIsNotLoggedIn',
   head() {
     return {
       title: 'Sign Up',
