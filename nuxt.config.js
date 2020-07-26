@@ -119,6 +119,9 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  server: {
+    port: process.env.PORT || 30000,
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
