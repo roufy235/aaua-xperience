@@ -146,6 +146,7 @@ export default {
             response.user.getIdToken(true).then((token) => {
               Cookies.set('access_token', token)
             })
+            // noinspection JSUnresolvedVariable
             this.$store.commit('SET_LOGIN_VAL', true)
             // this.$router.push('/user')
             Cookies.remove('access_token')
@@ -160,9 +161,11 @@ export default {
       }
     },
     logout() {
+      // noinspection JSUnusedLocalSymbols
       this.$fireAuth
         .signOut()
         .then((response) => {
+          // noinspection JSUnresolvedVariable
           this.$store.commit('SET_LOGIN_VAL', false)
           this.$router.push('/')
           this.$toast.success('You are now signed out')
