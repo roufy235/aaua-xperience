@@ -1,6 +1,21 @@
 import { getUserFromCookie } from '@/helpers/jwt'
 export const state = () => ({
   isUserLoggedIn: false,
+  projectName: 'AAUAHub',
+  categories: [
+    {
+      name: 'Shops',
+      link: '',
+    },
+    {
+      name: 'Hostels',
+      link: '',
+    },
+    {
+      name: 'Restaurants',
+      link: '',
+    },
+  ],
 })
 
 export const mutations = {
@@ -9,6 +24,8 @@ export const mutations = {
 
 export const getters = {
   GET_IS_USER_LOGGED_IN: (state) => state.isUserLoggedIn,
+  GET_ALL_CATEGORIES: (state) => state.categories,
+  GET_PROJECT_NAME: (state) => state.projectName,
 }
 
 export const actions = {

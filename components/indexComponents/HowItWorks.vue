@@ -8,8 +8,8 @@
           </div>
           <div class="row works">
             <div class="col-md-4">
-              <div class="box_how">
-                <i class="pe-7s-search"></i>
+              <div class="box_how text-center">
+                <BIconSearch class="custom-search-icon" />
                 <h3>Search Locations</h3>
                 <p class="text-center">
                   An nec placerat repudiare scripserit, temporibus complectitur
@@ -19,8 +19,8 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="box_how">
-                <i class="pe-7s-info"></i>
+              <div class="box_how text-center">
+                <BIconInfoCircle class="custom-search-icon" />
                 <h3>View Location Info</h3>
                 <p class="text-center">
                   An nec placerat repudiare scripserit, temporibus complectitur
@@ -30,8 +30,8 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="box_how">
-                <i class="pe-7s-like2"></i>
+              <div class="box_how text-center">
+                <BIconHandThumbsUp class="custom-search-icon" />
                 <h3>Book, Reach or Call</h3>
                 <p class="text-center">
                   An nec placerat repudiare scripserit, temporibus complectitur
@@ -60,8 +60,14 @@
 </template>
 
 <script>
+import { BIconSearch, BIconInfoCircle, BIconHandThumbsUp } from 'bootstrap-vue'
 export default {
   name: 'HowItWorks',
+  components: {
+    BIconSearch,
+    BIconInfoCircle,
+    BIconHandThumbsUp,
+  },
 }
 </script>
 
@@ -100,5 +106,10 @@ h3 {
   position: relative;
   z-index: 22;
   padding: 70px 0 60px 0;
+}
+.custom-search-icon {
+  color: #ff3547;
+  font-size: 40px;
+  margin-bottom: 28px;
 }
 </style>

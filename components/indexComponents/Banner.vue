@@ -36,9 +36,12 @@
                     <!--suppress HtmlFormInputWithoutLabel -->
                     <select name="" class="form-control">
                       <option value="all">All Categories</option>
-                      <option value="Shop">Shop</option>
-                      <option value="Shop">Hostels</option>
-                      <option value="Shop">Restaurants</option>
+                      <option
+                        v-for="(cate, index) in GET_ALL_CATEGORIES"
+                        :key="index"
+                        :value="cate.name"
+                        >{{ cate.name }}
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -57,27 +60,24 @@
       <mdbCard class="categories">
         <mdbCardBody class="text-center">
           <b-row>
-            <b-col sm="6" md="6" lg="3">
+            <b-col
+              v-for="(cate, index) in GET_ALL_CATEGORIES.slice(0, 3)"
+              :key="index"
+              :class="{ categoryBars: index === 1 || index === 2 }"
+              lg="3"
+              md="6"
+              sm="6"
+            >
               <nuxt-link to="#">
-                <b-icon icon="search" variant="danger"></b-icon>
+                <b-icon
+                  v-if="index === 0"
+                  icon="search"
+                  variant="danger"
+                ></b-icon>
+                <BIconHouse v-else-if="index === 1" class="setIconColor" />
+                <BIconServer v-else class="setIconColor" />
                 <h3>
-                  Shops
-                </h3>
-              </nuxt-link>
-            </b-col>
-            <b-col class="categoryBars" sm="6" md="6" lg="3">
-              <nuxt-link to="#">
-                <BIconHouse class="setIconColor" />
-                <h3>
-                  Hotels
-                </h3>
-              </nuxt-link>
-            </b-col>
-            <b-col class="categoryBars" sm="6" md="6" lg="3">
-              <nuxt-link to="#">
-                <BIconServer class="setIconColor" />
-                <h3>
-                  Restaurants
+                  {{ cate.name }}
                 </h3>
               </nuxt-link>
             </b-col>
@@ -97,6 +97,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import {
   BIconSearch,
   BIconMap,
@@ -118,6 +119,9 @@ export default {
     BIcon,
     BIconHouse,
     BIconServer,
+  },
+  computed: {
+    ...mapGetters(['GET_ALL_CATEGORIES']),
   },
 }
 </script>
