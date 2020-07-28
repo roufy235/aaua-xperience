@@ -4,6 +4,7 @@
     <div id="pattern">
       <Nuxt />
     </div>
+    <FooterComponent />
   </div>
 </template>
 
@@ -31,7 +32,8 @@ html {
 </style>
 <script>
 import HeaderComponent from '~/components/HeaderComponent'
+import FooterComponent from '~/components/FooterComponent'
 export default {
-  components: { HeaderComponent },
+  components: { FooterComponent, HeaderComponent },
 }
 </script>

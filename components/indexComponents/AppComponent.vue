@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// noinspection NpmUsedModulesInstalled
 import { mapGetters } from 'vuex'
 export default {
   name: 'AppComponent',
