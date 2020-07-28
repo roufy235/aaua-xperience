@@ -30,6 +30,7 @@ export const getters = {
 
 export const actions = {
   nuxtServerInit({ commit }, context) {
+    // noinspection JSUnresolvedVariable
     if (process.server) {
       const { req } = context
       const user = getUserFromCookie(req)

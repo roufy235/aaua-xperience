@@ -10,7 +10,6 @@
 
 <script>
 import { capitaliseFirstLetter } from '~/helpers/myFunctions'
-
 export default {
   name: 'Index',
   asyncData({ params }) {
