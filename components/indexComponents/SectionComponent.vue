@@ -1,13 +1,15 @@
 <template>
   <div class="section">
     <h2 class="addBar">
-      {{ sectionName }}
+      <nuxt-link :to="`/listing/places/${link}`" class="thisLink">
+        {{ sectionName }}
+      </nuxt-link>
     </h2>
     <div class="row sectionCards">
       <div v-for="index in 4" :key="index" class="col-md-3">
         <mdb-card>
           <mdb-view hover>
-            <nuxt-link to="#">
+            <nuxt-link :to="`/listing/places/${link}/Basic card`">
               <mdb-card-image
                 src="https://picsum.photos/250/300"
                 class="img-fluid_per"
@@ -55,6 +57,11 @@ export default {
       required: true,
       default: '',
     },
+    link: {
+      type: String,
+      required: true,
+      default: '',
+    },
   },
 }
 </script>
@@ -90,5 +97,8 @@ p {
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
+}
+.thisLink {
+  color: black;
 }
 </style>

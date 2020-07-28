@@ -5,15 +5,15 @@ export const state = () => ({
   categories: [
     {
       name: 'Shops',
-      link: '',
+      link: 'shops',
     },
     {
       name: 'Hostels',
-      link: '',
+      link: 'hostels',
     },
     {
       name: 'Restaurants',
-      link: '',
+      link: 'restaurants',
     },
   ],
 })

@@ -1,5 +1,11 @@
 <template>
-  <div></div>
+  <div class="pageHolder">
+    <div class="container">
+      <h2>
+        Sponsor
+      </h2>
+    </div>
+  </div>
 </template>
 
 <script>

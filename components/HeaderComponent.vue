@@ -21,7 +21,8 @@
 
         <div class="header__menu header__links hide-for-mobile">
           <a href="#">About Us</a><a href="#">Contact Us</a><a href="#">Blog</a
-          ><a href="#">FAQs</a>
+          ><a href="#">FAQs</a><nuxt-link to="/listing/events">Events</nuxt-link
+          ><nuxt-link to="/listing/places">Places</nuxt-link>
         </div>
 
         <div v-if="GET_IS_USER_LOGGED_IN" class="hide-for-mobile">

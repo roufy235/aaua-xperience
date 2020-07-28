@@ -8,9 +8,9 @@
         </mdbBtn>
       </div>
       <div class="container">
-        <SectionComponent section-name="Famous Shops" />
-        <SectionComponent section-name="Popular Hotels" />
-        <SectionComponent section-name="Top Restaurants" />
+        <SectionComponent section-name="Famous Shops" link="shops" />
+        <SectionComponent section-name="Popular Hostels" link="hostels" />
+        <SectionComponent section-name="Top Restaurants" link="restaurants" />
       </div>
       <HowItWorks />
       <AppComponent />

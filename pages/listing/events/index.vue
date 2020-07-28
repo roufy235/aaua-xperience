@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <div class="banner">
-      <div class="overlayBanner">
-        <div class="container">
-          <div class="myContent">
-            <h2 class="text-center">
-              FIND WHAT YOU NEED!
-            </h2>
+  <div class="pageHolder">
+    <div class="searchHolderDef">
+      <div class="container">
+        <b-row>
+          <b-col lg="9" md="9">
             <div class="myCard">
               <div class="row custom-search-input-2 searchHolder">
                 <div class="noPadding col-md-4">
@@ -52,73 +49,27 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </b-col>
+          <b-col lg="3" md="3">
+            <p class="listCounter">145 result for All listing</p>
+          </b-col>
+        </b-row>
       </div>
-    </div>
-    <div class="container">
-      <mdbCard class="categories">
-        <mdbCardBody class="text-center">
-          <b-row>
-            <b-col
-              v-for="(cate, index) in GET_ALL_CATEGORIES.slice(0, 3)"
-              :key="index"
-              :class="{ categoryBars: index === 1 || index === 2 }"
-              lg="3"
-              md="6"
-              sm="6"
-            >
-              <nuxt-link :to="`/listing/places/${cate.link}`">
-                <b-icon
-                  v-if="index === 0"
-                  icon="search"
-                  variant="danger"
-                ></b-icon>
-                <BIconHouse v-else-if="index === 1" class="setIconColor" />
-                <BIconServer v-else class="setIconColor" />
-                <h3>
-                  {{ cate.name }}
-                </h3>
-              </nuxt-link>
-            </b-col>
-            <b-col class="categoryBars" sm="6" md="6" lg="3">
-              <nuxt-link to="/listing/places">
-                <BIconThreeDots class="setIconColor" />
-                <h3>
-                  More
-                </h3>
-              </nuxt-link>
-            </b-col>
-          </b-row>
-        </mdbCardBody>
-      </mdbCard>
     </div>
   </div>
 </template>
 
 <script>
+import { mdbBtn } from 'mdbvue'
+import { BIconMap, BIconSearch } from 'bootstrap-vue'
 import { mapGetters } from 'vuex'
-import {
-  BIconSearch,
-  BIconMap,
-  BIcon,
-  BIconHouse,
-  BIconServer,
-  BIconThreeDots,
-} from 'bootstrap-vue'
-import { mdbBtn, mdbCard, mdbCardBody } from 'mdbvue'
+
 export default {
-  name: 'Banner',
+  name: 'Index',
   components: {
     mdbBtn,
     BIconSearch,
-    BIconThreeDots,
     BIconMap,
-    mdbCard,
-    mdbCardBody,
-    BIcon,
-    BIconHouse,
-    BIconServer,
   },
   computed: {
     ...mapGetters(['GET_ALL_CATEGORIES']),
@@ -126,46 +77,19 @@ export default {
 }
 </script>
 
-<!--suppress SassScssResolvedByNameOnly -->
 <style scoped lang="scss">
-.categories {
-  margin-top: -30px;
+.listCounter {
+  color: white;
+  font-weight: 500;
+  margin-top: 14px;
 }
-h3 {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500 !important;
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .myContent {
-    padding: 130px 0 0 0;
-  }
-  .card {
-    position: inherit !important;
-  }
-}
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .myContent {
-    padding: 70px 0 0 0;
-  }
-  .searchHolder {
-    margin: 10px;
-  }
-  h2 {
-    margin-bottom: 50px;
-    color: white;
-    font-weight: 900;
-    font-size: 2rem !important;
-    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
-    margin-top: 40px;
-  }
-  .card {
-    position: inherit !important;
-  }
+.searchHolderDef {
+  background-color: $projectColorRed;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
+// search begins
 .custom-search-icon {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -208,7 +132,6 @@ h3 {
 }
 .searchHolder {
   background-color: white;
-  box-shadow: 2px 2px 2px 24px #5a17175c;
 }
 .padding {
   padding: 25px;
@@ -217,22 +140,5 @@ h3 {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-h2 {
-  margin-bottom: 50px;
-  color: white;
-  font-weight: 900;
-  font-size: 2.625rem;
-  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
-}
-.overlayBanner {
-  background-color: $bannerOverlay;
-  height: $bannerHeight;
-}
-.banner {
-  background-image: url('/images/bannerTwo.jpg');
-  background-size: cover;
-  height: $bannerHeight;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
+// search ends
 </style>

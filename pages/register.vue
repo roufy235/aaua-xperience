@@ -1,5 +1,11 @@
 <template>
-  <div></div>
+  <div class="pageHolder">
+    <div class="container">
+      <h3>
+        Register
+      </h3>
+    </div>
+  </div>
 </template>
 
 <script>
