@@ -41,7 +41,7 @@
             </div>
           </div>
           <!-- /row -->
-          <b-row>
+          <b-row v-if="!GET_IS_USER_LOGGED_IN">
             <b-col offset-md="3" offset-lg="3" sm="12" md="4" lg="4">
               <nuxt-link
                 to="/register"
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { BIconSearch, BIconInfoCircle, BIconHandThumbsUp } from 'bootstrap-vue'
 export default {
   name: 'HowItWorks',
@@ -67,6 +68,9 @@ export default {
     BIconSearch,
     BIconInfoCircle,
     BIconHandThumbsUp,
+  },
+  computed: {
+    ...mapGetters(['GET_IS_USER_LOGGED_IN']),
   },
 }
 </script>
