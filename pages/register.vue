@@ -108,17 +108,20 @@ export default {
     mdbCardBody,
     mdbBtn,
   },
-  data: () => ({
-    regData: {
-      isRegBool: false,
-      username: '',
-      name: '',
-      email: '',
-      password: '',
-      cPassword: '',
-      phone: '',
-    },
-  }),
+  asyncData({ store }) {
+    return {
+      title: store.state.projectName,
+      regData: {
+        isRegBool: false,
+        username: '',
+        name: '',
+        email: '',
+        password: '',
+        cPassword: '',
+        phone: '',
+      },
+    }
+  },
   methods: {
     createAccount() {
       if (
@@ -173,7 +176,7 @@ export default {
   },
   head() {
     return {
-      title: 'Sign Up',
+      title: 'Sign Up | ' + this.title,
       meta: [
         {
           hid: 'description',

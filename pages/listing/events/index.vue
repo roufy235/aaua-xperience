@@ -74,6 +74,18 @@ export default {
   computed: {
     ...mapGetters(['GET_ALL_CATEGORIES']),
   },
+  head() {
+    return {
+      title: 'Events',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
+    }
+  },
 }
 </script>
 
