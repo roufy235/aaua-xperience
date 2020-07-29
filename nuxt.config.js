@@ -87,16 +87,23 @@ export default {
           appId: '1:967876807982:web:36d28facc8f7029401bebf',
           measurementId: 'G-SRM55PZFQY',
         },
-        services: {
-          auth: true, // Just as example. Can be any other service.
-          performance: true,
-          analytics: true,
-          storage: true,
-          realtimeDb: true,
-        },
       },
     ],
   ],
+  firebase: {
+    // ...
+    services: {
+      auth: {
+        persistence: 'local', // default
+        ssr: true,
+      },
+      performance: true,
+      analytics: true,
+      storage: true,
+      realtimeDb: true,
+      // ...
+    },
+  },
   toast: {
     theme: 'bubble',
     position: 'top-right',

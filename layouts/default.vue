@@ -4,6 +4,7 @@
     <div id="pattern">
       <Nuxt />
     </div>
+    <hr />
     <FooterComponent />
   </div>
 </template>
