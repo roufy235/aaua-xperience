@@ -5,13 +5,13 @@ export default function (context) {
     const { req, redirect } = context
     const user = getUserFromCookie(req)
     if (user) {
-      redirect('/')
+      return redirect('/')
     }
   } else {
     const { app, redirect } = context
     const currentUser = app.$fireAuth.currentUser
     if (currentUser) {
-      redirect('/')
+      return redirect('/')
     }
   }
 }
