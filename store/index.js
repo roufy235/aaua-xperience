@@ -35,25 +35,17 @@ export const getters = {
 
 export const actions = {
   nuxtServerInit({ commit }, context) {
+    let uid = ''
+    let fireDb = ''
     // noinspection JSUnresolvedVariable
     return new Promise((resolve, reject) => {
+      // noinspection JSUnresolvedVariable
       if (process.server) {
         const { req, app } = context
         const user = getUserFromCookie(req)
         if (user) {
-          const uid = user.user_id
-          getUserDataFuncHelper(app.$fireDb, uid)
-            .once('value')
-            .then((snapshot) => {
-              const user = snapshot.val()
-              commit('SET_LOGIN_VAL', true)
-              commit('SET_USER_DATA', user)
-              resolve(true)
-            })
-            .catch((error) => {
-              commit('SET_LOGIN_VAL', false)
-              reject(error)
-            })
+          uid = user.user_id
+          fireDb = app.$fireDb
         } else {
           resolve(false)
         }
@@ -61,22 +53,24 @@ export const actions = {
         const { app } = context
         const currentUser = app.$fireAuth.currentUser
         if (currentUser) {
-          getUserDataFuncHelper(app.$fireDb, currentUser.uid)
-            .once('value')
-            .then((snapshot) => {
-              const user = snapshot.val()
-              commit('SET_LOGIN_VAL', true)
-              commit('SET_USER_DATA', user)
-              resolve(true)
-            })
-            .catch((error) => {
-              commit('SET_LOGIN_VAL', false)
-              reject(error)
-            })
+          uid = currentUser.uid
+          fireDb = app.$fireDb
         } else {
           resolve(false)
         }
       }
+      getUserDataFuncHelper(fireDb, uid)
+        .once('value')
+        .then((snapshot) => {
+          const user = snapshot.val()
+          commit('SET_LOGIN_VAL', true)
+          commit('SET_USER_DATA', user)
+          resolve(true)
+        })
+        .catch((error) => {
+          commit('SET_LOGIN_VAL', false)
+          reject(error)
+        })
     })
   },
 }
