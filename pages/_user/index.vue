@@ -1,19 +1,20 @@
 <template>
-  <div class="pageHolder">
-    <div class="container">
-      <h2>
-        Sponsor
-      </h2>
-    </div>
-  </div>
+  <div class="pageHolder"></div>
 </template>
 
 <script>
 export default {
-  name: 'Sponsor',
+  name: 'Index',
+  middleware: 'UserAuth',
+  asyncData({ store, params }) {
+    return {
+      title: store.state.projectName,
+      user: params.user,
+    }
+  },
   head() {
     return {
-      title: 'Become a Sponsor',
+      title: this.user + ' | ' + this.title,
       meta: [
         {
           hid: 'description',

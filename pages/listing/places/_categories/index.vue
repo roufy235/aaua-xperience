@@ -2,18 +2,26 @@
   <div class="pageHolder">
     <div class="container">
       <h2>
-        Sponsor
+        {{ pageTitle }}
       </h2>
     </div>
   </div>
 </template>
 
 <script>
+import { capitaliseFirstLetter } from '~/helpers/myFunctions'
 export default {
-  name: 'Sponsor',
+  name: 'Index',
+  asyncData({ params, store }) {
+    return {
+      projectName: store.state.projectName,
+      categories: params.categories,
+      pageTitle: capitaliseFirstLetter(params.categories),
+    }
+  },
   head() {
     return {
-      title: 'Become a Sponsor',
+      title: this.pageTitle + ' | ' + this.projectName,
       meta: [
         {
           hid: 'description',

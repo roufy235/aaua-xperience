@@ -2,7 +2,7 @@
   <div class="pageHolder">
     <div class="container">
       <h2>
-        Sponsor
+        All Places
       </h2>
     </div>
   </div>
@@ -10,10 +10,10 @@
 
 <script>
 export default {
-  name: 'Sponsor',
+  name: 'Index',
   head() {
     return {
-      title: 'Become a Sponsor',
+      title: 'All Places',
       meta: [
         {
           hid: 'description',

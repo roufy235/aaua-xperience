@@ -1,3 +1,4 @@
+// noinspection JSUnusedGlobalSymbols
 export default {
   /*
    ** Nuxt rendering mode
@@ -86,16 +87,23 @@ export default {
           appId: '1:967876807982:web:36d28facc8f7029401bebf',
           measurementId: 'G-SRM55PZFQY',
         },
-        services: {
-          auth: true, // Just as example. Can be any other service.
-          performance: true,
-          analytics: true,
-          storage: true,
-          realtimeDb: true,
-        },
       },
     ],
   ],
+  firebase: {
+    // ...
+    services: {
+      auth: {
+        persistence: 'local', // default
+        ssr: true,
+      },
+      performance: true,
+      analytics: true,
+      storage: true,
+      realtimeDb: true,
+      // ...
+    },
+  },
   toast: {
     theme: 'bubble',
     position: 'top-right',
@@ -119,6 +127,9 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  server: {
+    // port: process.env.PORT || 30000,
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

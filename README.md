@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+Download  [NodeJs](http://nodejs.org/) to install dependencies.
+
 ```bash
 # install dependencies
 $ npm install
@@ -18,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+### Goto Website
+See [aaua-xperience](#)
+
+### Goto Developer's Website
+See [Covirtue](https://www.covirtue.com/)

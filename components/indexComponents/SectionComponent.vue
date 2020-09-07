@@ -1,17 +1,29 @@
 <template>
   <div class="section">
     <h2 class="addBar">
-      {{ sectionName }}
+      <nuxt-link :to="`/listing/places/${link}`" class="thisLink">
+        {{ sectionName }}
+      </nuxt-link>
     </h2>
     <div class="row sectionCards">
       <div v-for="index in 4" :key="index" class="col-md-3">
         <mdb-card>
+          <mdb-view hover>
+            <nuxt-link :to="`/listing/places/${link}/Basic card`">
+              <mdb-card-image
+                src="https://picsum.photos/250/300"
+                class="img-fluid_per"
+                alt="Card image cap"
+              />
+              <mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+            </nuxt-link>
+          </mdb-view>
           <mdb-card-body class="cardBody">
-            <mdb-card-image
-              src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-              alt="Card image cap"
-            ></mdb-card-image>
-            <mdb-btn color="dark" class="btn-sm btn-block">Pinko</mdb-btn>
+            <mdb-card-title>
+              <p>
+                Basic card
+              </p>
+            </mdb-card-title>
           </mdb-card-body>
         </mdb-card>
       </div>
@@ -21,17 +33,31 @@
 
 <!--suppress ES6CheckImport -->
 <script>
-import { mdbCard, mdbCardImage, mdbCardBody, mdbBtn } from 'mdbvue'
+import {
+  mdbCard,
+  mdbView,
+  mdbMask,
+  mdbCardImage,
+  mdbCardBody,
+  mdbCardTitle,
+} from 'mdbvue'
 export default {
   name: 'SectionComponent',
   components: {
     mdbCard,
+    mdbCardTitle,
     mdbCardImage,
     mdbCardBody,
-    mdbBtn,
+    mdbMask,
+    mdbView,
   },
   props: {
     sectionName: {
+      type: String,
+      required: true,
+      default: '',
+    },
+    link: {
       type: String,
       required: true,
       default: '',
@@ -63,5 +89,16 @@ h2 {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 0 !important;
+}
+.img-fluid_per {
+  width: 100% !important;
+}
+p {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+.thisLink {
+  color: black;
 }
 </style>

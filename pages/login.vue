@@ -16,7 +16,6 @@
 
 <script>
 import Cookies from 'js-cookie'
-// noinspection ES6CheckImport
 import { mdbBtn } from 'mdbvue'
 export default {
   name: 'Login',
