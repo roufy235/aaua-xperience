@@ -1,9 +1,7 @@
 <template>
   <div class="pageHolder">
     <div class="container">
-      <h3>
-        Register with us Today
-      </h3>
+      <h3><BIconPersonPlus /> Register with us Today</h3>
       <b-row>
         <b-col offset="2" md="8" lg="8">
           <mdb-card>
@@ -98,6 +96,7 @@
 // noinspection ES6CheckImport
 import { mdbCard, mdbCardBody, mdbBtn } from 'mdbvue'
 import Cookie from 'js-cookie'
+import { BIconPersonPlus } from 'bootstrap-vue'
 import { createNewUserFuncHelper } from '~/helpers/firebase_database_reference'
 
 export default {
@@ -107,6 +106,7 @@ export default {
     mdbCard,
     mdbCardBody,
     mdbBtn,
+    BIconPersonPlus,
   },
   asyncData({ store }) {
     return {
