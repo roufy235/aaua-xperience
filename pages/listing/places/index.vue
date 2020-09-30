@@ -1,9 +1,7 @@
 <template>
   <div class="pageHolder">
     <div class="container">
-      <h2>
-        All Places
-      </h2>
+      <h2>All Places</h2>
     </div>
   </div>
 </template>

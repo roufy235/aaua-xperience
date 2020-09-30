@@ -32,7 +32,8 @@
                       v-for="(cate, index) in categories"
                       :key="index"
                       :value="cate.name"
-                      >{{ cate.name }}
+                    >
+                      {{ cate.name }}
                     </option>
                   </select>
                 </div>

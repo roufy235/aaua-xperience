@@ -20,9 +20,7 @@
           </mdb-view>
           <mdb-card-body class="cardBody">
             <mdb-card-title>
-              <p>
-                Basic card
-              </p>
+              <p>Basic card</p>
             </mdb-card-title>
           </mdb-card-body>
         </mdb-card>

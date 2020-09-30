@@ -93,7 +93,7 @@
                   role="status"
                   aria-hidden="true"
                 ></span>
-                Login
+                <BIconBoxArrowInRight /> Login
               </mdbBtn>
             </div>
           </form>
@@ -112,6 +112,7 @@ import {
   mdbModalTitle,
   mdbModalBody,
 } from 'mdbvue'
+import { BIconBoxArrowInRight } from 'bootstrap-vue'
 import { mapGetters } from 'vuex'
 import Cookies from 'js-cookie'
 import { getUserDataFuncHelper } from '~/helpers/firebase_database_reference'
@@ -119,6 +120,7 @@ import { getUserDataFuncHelper } from '~/helpers/firebase_database_reference'
 export default {
   name: 'HeaderComponent',
   components: {
+    BIconBoxArrowInRight,
     mdbModal,
     mdbModalHeader,
     mdbModalTitle,

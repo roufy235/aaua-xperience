@@ -1,8 +1,6 @@
 <template>
   <div>
-    <span class="filterStyle">
-      Filter
-    </span>
+    <span class="filterStyle"> Filter </span>
     <BIconFilter class="iconFloatRight" />
     <hr />
     <mdb-btn-group>
@@ -32,9 +30,7 @@
       </mdb-btn>
     </mdb-btn-group>
     <hr />
-    <p class="cateName">
-      Category
-    </p>
+    <p class="cateName">Category</p>
     <div
       v-for="(cate, index) in categories"
       :key="index"
@@ -54,9 +50,7 @@
       </label>
     </div>
     <hr />
-    <p class="cateName">
-      Rating
-    </p>
+    <p class="cateName">Rating</p>
     <div
       v-for="(cate, index) in categories"
       :key="index"
