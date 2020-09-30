@@ -4,9 +4,7 @@
       <div class="overlayBanner">
         <div class="container">
           <div class="myContent">
-            <h2 class="text-center">
-              FIND WHAT YOU NEED!
-            </h2>
+            <h2 class="text-center">FIND WHAT YOU NEED!</h2>
             <div class="myCard">
               <div class="row custom-search-input-2 searchHolder">
                 <div class="noPadding col-md-4">
@@ -40,7 +38,8 @@
                         v-for="(cate, index) in GET_ALL_CATEGORIES"
                         :key="index"
                         :value="cate.name"
-                        >{{ cate.name }}
+                      >
+                        {{ cate.name }}
                       </option>
                     </select>
                   </div>
@@ -84,9 +83,7 @@
             <b-col class="categoryBars" sm="6" md="6" lg="3">
               <nuxt-link to="/listing/places">
                 <BIconThreeDots class="setIconColor" />
-                <h3>
-                  More
-                </h3>
+                <h3>More</h3>
               </nuxt-link>
             </b-col>
           </b-row>

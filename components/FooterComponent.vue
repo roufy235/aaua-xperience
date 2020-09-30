@@ -3,9 +3,7 @@
     <div class="container">
       <b-row>
         <b-col sm="6" md="4" lg="4">
-          <h6>
-            Quick Links
-          </h6>
+          <h6>Quick Links</h6>
           <ul>
             <li>
               <nuxt-link to="#" class="link">About Us</nuxt-link>
@@ -36,9 +34,7 @@
           </ul>
         </b-col>
         <b-col sm="12" md="4" lg="4">
-          <h6>
-            Keep in touch
-          </h6>
+          <h6>Keep in touch</h6>
           <div>
             <b-form inline>
               <label class="sr-only" for="inline-form-input-name">Name</label>
@@ -50,9 +46,7 @@
               <mdbBtn color="danger" class="btn-sm submit">Submit</mdbBtn>
             </b-form>
           </div>
-          <h6>
-            Follow us
-          </h6>
+          <h6>Follow us</h6>
           <ul class="socialBtn">
             <li><BIconEnvelopeFill class="socialBtnIcons" /></li>
             <li><BIconEnvelopeFill class="socialBtnIcons" /></li>
