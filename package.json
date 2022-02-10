@@ -50,7 +50,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jsdom": "^16.2.2",
     "jsdom-global": "^3.0.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prettier": "^2.0.5",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
